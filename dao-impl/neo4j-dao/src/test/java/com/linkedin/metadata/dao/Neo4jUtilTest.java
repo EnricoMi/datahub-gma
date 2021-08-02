@@ -179,19 +179,6 @@ public class Neo4jUtilTest {
   }
 
   @Test
-  public void testCreateRelationshipFilter() {
-    String field = "field";
-    String value = "value";
-    RelationshipDirection direction = RelationshipDirection.OUTGOING;
-
-    RelationshipFilter relationshipFilter = new RelationshipFilter().setCriteria(new CriterionArray(
-        Collections.singletonList(new Criterion().setField(field).setValue(value).setCondition(Condition.EQUAL))))
-        .setDirection(direction);
-
-    assertEquals(createRelationshipFilter(field, value, direction), relationshipFilter);
-  }
-
-  @Test
   public void testPathSegmentToRecordList() {
     FooUrn fooUrn = makeFooUrn(1);
     Node fooNode = new InternalNode(0, Collections.singletonList("com.linkedin.testing.EntityFoo"),

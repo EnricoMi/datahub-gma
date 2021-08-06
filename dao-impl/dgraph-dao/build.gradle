@@ -1,0 +1,14 @@
+apply plugin: 'java'
+
+apply from: "$rootDir/gradle/java-publishing.gradle"
+
+dependencies {
+  compile project(':dao-api')
+
+  compile externalDependency.dgraph4j
+  compileOnly externalDependency.lombok
+  annotationProcessor externalDependency.lombok
+
+  testImplementation testFixtures(project(':dao-api'))
+  testCompile project(':testing:test-models')
+}

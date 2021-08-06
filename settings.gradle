@@ -1,6 +1,7 @@
 include 'core-models'
 include 'core-models-utils'
 include 'dao-api'
+include 'dao-impl:dgraph-dao'
 include 'dao-impl:ebean-dao'
 include 'dao-impl:elasticsearch-dao'
 include 'dao-impl:elasticsearch-dao-7'
